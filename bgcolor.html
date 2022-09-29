@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color picker</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: justify;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.3)
+        }
+
+        .holder {
+            padding: 0px;
+            min-width: 20px;
+            min-height: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <div>
+            <h1 id="t1"> Background Color Selector </h1>
+            <div >
+                <label for="color"></label>
+                <input type="color" id="color" />
+            </div>
+            <h1 id="t2"> Text Color Selector </h1>
+            <div >
+
+                <label for="color2"></label>
+                <input type="color" id="bcolor" />
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+<script>
+    function change() {
+        console.log(document.getElementById("thd").style.color);
+        document.getElementById("thd").style.color = "#ffffff";
+    }
+    const colorInput = document.getElementById("color");
+    colorInput.addEventListener("input", () => {
+        const colorcode = document.getElementById("color").value;
+        document.body.style.backgroundColor = colorcode;
+    })
+    const colorInput2 = document.getElementById("bcolor");
+    colorInput2.addEventListener("input", () => {
+        const colorcode2 = document.getElementById("bcolor").value;
+        console.log(colorInput2);
+        document.getElementById("t1").style.color = colorcode2;
+        document.getElementById("t2").style.color = colorcode2;
+    })
+</script>
+<script>
+    //  const btn = document.getElementById('btn');
+
+    // btn.addEventListener('click', function onClick(event) {
+    //  const box = document.getElementById('box');
+
+    //  box.style.color = 'salmon';
+    // });
+</script>
+
+</html>
